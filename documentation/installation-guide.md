@@ -10,7 +10,7 @@ This guide documents the installation of Ubuntu Server 24.04.5 LTS on a Lenovo G
 ### Hardware
 - Lenovo G580 laptop.
 - 8 GB RAM.
-- Kingston 128 GB SSD.
+- 128 GB SSD.
 - USB flash drive (8 GB or larger).
 - Ethernet connection.
 - External monitor and keyboard for installation.
