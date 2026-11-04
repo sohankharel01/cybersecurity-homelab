@@ -65,49 +65,49 @@ The Lenovo will act as the central server, while the Windows 11 PC will be used 
 ## Project Roadmap
 
 ### Phase 1 — Network Preparation
-- [x] Connect Lenovo to the home router.
-- [x] Verify Lenovo-to-router connectivity.
-- [x] Troubleshoot Lenovo-to-Windows PC connectivity.
-- [x] Verify communication between computers.
+-  Connect Lenovo to the home router.
+-  Verify Lenovo-to-router connectivity.
+-  Troubleshoot Lenovo-to-Windows PC connectivity.
+-  Verify communication between computers.
 
 ### Phase 2 — Operating System Installation
-- [x] Download Ubuntu Server ISO.
-- [x] Configure Rufus for UEFI boot.
-- [ ] Create bootable USB.
-- [ ] Install Ubuntu Server.
-- [ ] Configure storage.
-- [ ] Configure SSH.
+-  Download Ubuntu Server ISO.
+-  Configure Rufus for UEFI boot.
+-  Create bootable USB.
+-  Install Ubuntu Server.
+-  Configure storage.
+-  Configure SSH.
 
 ### Phase 3 — Core Server Configuration
-- [ ] Configure static DHCP reservation.
-- [ ] Configure Tailscale.
-- [ ] Configure firewall.
-- [ ] Install Docker Engine.
-- [ ] Configure Docker Compose.
+-  Configure static DHCP reservation.
+-  Configure Tailscale.
+-  Configure firewall.
+-  Install Docker Engine.
+-  Configure Docker Compose.
 
 ### Phase 4 — Home Server Applications
-- [ ] Deploy AdGuard Home.
-- [ ] Configure DNS filtering.
-- [ ] Deploy Samba.
-- [ ] Deploy Jellyfin.
-- [ ] Deploy Uptime Kuma.
-- [ ] Configure backups.
+-  Deploy AdGuard Home.
+-  Configure DNS filtering.
+-  Deploy Samba.
+-  Deploy Jellyfin.
+-  Deploy Uptime Kuma.
+-  Configure backups.
 
 ### Phase 5 — Cybersecurity Monitoring
-- [ ] Deploy Wazuh.
-- [ ] Install Windows monitoring agent.
-- [ ] Deploy Suricata.
-- [ ] Configure security alerts.
-- [ ] Perform authorized detection tests.
-- [ ] Document security investigations.
+-  Deploy Wazuh.
+-  Install Windows monitoring agent.
+-  Deploy Suricata.
+-  Configure security alerts.
+-  Perform authorized detection tests.
+-  Document security investigations.
 
 ### Phase 6 — Final Testing
-- [ ] Test remote access.
-- [ ] Test shared storage.
-- [ ] Test DNS filtering.
-- [ ] Test media streaming.
-- [ ] Test security monitoring.
-- [ ] Document final architecture.
+-  Test remote access.
+-  Test shared storage.
+-  Test DNS filtering.
+-  Test media streaming.
+-  Test security monitoring.
+-  Document final architecture.
 
 ## Storage Plan
 
