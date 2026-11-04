@@ -31,7 +31,7 @@ A separate Windows 11 computer will serve as the primary administration workstat
 
 ## Architecture
 
-The Lenovo will act as the central server, while the Windows 11 PC will be used for administration and authorized security testing.
+The Lenovo(home server) will act as the central server, while the Windows 11 PC(main device) will be used for administration and authorized security testing.
 
 ### Planned Software Stack
 
