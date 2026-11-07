@@ -1,153 +1,199 @@
-# Cybersecurity HomeLab
+# 🛡️ Cybersecurity Homelab
 
-**A self-hosted home server for Linux administration, infrastructure management, network security, and cybersecurity learning.**
+### A Self-Hosted Environment for Cybersecurity, Networking & Infrastructure Engineering
 
-![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
-![OS](https://img.shields.io/badge/OS-Ubuntu%20Server-orange)
-![Platform](https://img.shields.io/badge/Platform-Lenovo%20Hardware-blue)
-![Focus](https://img.shields.io/badge/Focus-Cybersecurity-red)
+A practical home-lab project built using a Lenovo G580 laptop and Ubuntu Server. The goal is to develop real-world skills in Linux administration, network security, infrastructure management, containerization, remote access, and self-hosted services.
+
+**Project Status:** Active Development
+
+---
 
 ## Overview
 
-This project transforms an old Lenovo computer into a multi-purpose home server.
+This project transforms an old Lenovo laptop into a self-hosted server and cybersecurity learning environment.
 
-The objective is to build an affordable self-hosted infrastructure environment that combines home-server applications with practical cybersecurity monitoring.
+Rather than relying entirely on cloud services, the lab provides a platform to deploy, configure, secure, monitor, and troubleshoot real services.
 
-The server will provide file sharing, media streaming, network-wide advertisement blocking, remote access, infrastructure monitoring, and security event detection.
+### Objectives
 
-A separate Windows 11 computer will serve as the primary administration workstation and penetration-testing environment.
+- Build practical Linux server administration skills.
+- Understand networking and network security.
+- Deploy and manage containerized applications.
+- Implement secure remote server access.
+- Configure DNS filtering and firewall protection.
+- Develop backup and storage infrastructure.
+- Build a foundation for future cybersecurity projects.
 
-## Hardware Specifications
+---
+
+## Hardware & Infrastructure
 
 | Component | Specification |
 |---|---|
-| Processor | Intel Core i3 |
-| RAM | 8 GB |
-| Primary Storage | 128 GB SSD |
-| Secondary Storage | 512 GB HDD |
-| Network | Ethernet |
-| Existing OS | Windows 10 Home |
-| Planned OS | Ubuntu Server 24.04 LTS |
+| Device | Lenovo G580 |
+| CPU | Intel Core i3-2328M |
+| Memory | 8 GB RAM |
+| Primary Storage | 128 GB Kingston SSD |
+| Secondary Storage | 512 GB Hitachi HDD |
+| Operating System | Ubuntu Server 24.04 LTS |
+
+Ubuntu Server and core services run from the SSD. The secondary HDD is being prepared for dedicated storage services.
+
+---
+
+## Technology Stack
+
+| Technology | Purpose | Status |
+|---|---|---|
+| Ubuntu Server | Server operating system | Operational |
+| Docker | Container management | Operational |
+| CasaOS | Application management | Operational |
+| Cockpit | Server administration | Operational |
+| Tailscale | Private remote access | Operational |
+| AdGuard Home | DNS filtering and ad blocking | Operational |
+| UFW | Host firewall | Operational |
+| Samba | Network file sharing | Planned |
+| Jellyfin | Media streaming | Planned |
+
+---
 
 ## Architecture
 
-The Lenovo(home server) will act as the central server, while the Windows 11 PC(main device) will be used for administration and authorized security testing.
+```text
+              REMOTE DEVICES
+             (Phone / Laptop)
+                     |
+                  Tailscale
+                     |
+                     |
+             HOME NETWORK
+                     |
+               Router / LAN
+                     |
+                     |
+          LENOVO G580 SERVER
+              Ubuntu Server
+                     |
+       +-------------+-------------+
+       |             |             |
+     Docker        UFW          SSH
+       |
+   +---+---------------------+
+   |          |              |
+ CasaOS    Cockpit       AdGuard Home
+   |          |              |
+   +----------+--------------+
+                     |
+              Storage Layer
+                     |
+             SSD + HDD
+```
 
-### Planned Software Stack
+*Architecture represents the current and planned infrastructure. Storage services are not yet deployed.*
 
-| Software | Purpose |
-|---|---|
-| Ubuntu Server | Server operating system |
-| Docker | Container management |
-| Tailscale | Secure remote access |
-| OpenSSH | Remote administration |
-| AdGuard Home | Network-wide DNS ad and tracker blocking |
-| Samba | Network file sharing |
-| Jellyfin | Media streaming |
-| Uptime Kuma | Infrastructure monitoring |
-| Wazuh | SIEM and security monitoring |
-| Suricata | Network intrusion detection |
+---
 
-## Project Objectives
+## Implemented Services
 
-- Build a low-cost home server.
-- Learn Linux server administration.
-- Understand networking and network security.
-- Deploy self-hosted applications using Docker.
-- Implement network-wide DNS filtering.
-- Build a practical SIEM environment.
-- Monitor security events and investigate alerts.
-- Practice authorized penetration testing.
-- Document every installation and configuration.
+### 1. Ubuntu Server
 
-## Project Roadmap
+Installed Ubuntu Server 24.04 LTS as the foundation of the infrastructure.
 
-### Phase 1 — Network Preparation
--  Connect Lenovo to the home router.
--  Verify Lenovo-to-router connectivity.
--  Troubleshoot Lenovo-to-Windows PC connectivity.
--  Verify communication between computers.
+### 2. Docker
 
-### Phase 2 — Operating System Installation
--  Download Ubuntu Server ISO.
--  Configure Rufus for UEFI boot.
--  Create bootable USB.
--  Install Ubuntu Server.
--  Configure storage.
--  Configure SSH.
+Installed and enabled Docker for containerized service deployment and management.
 
-### Phase 3 — Core Server Configuration
--  Configure static DHCP reservation.
--  Configure Tailscale.
--  Configure firewall.
--  Install Docker Engine.
--  Configure Docker Compose.
+### 3. CasaOS
 
-### Phase 4 — Home Server Applications
--  Deploy AdGuard Home.
--  Configure DNS filtering.
--  Deploy Samba.
--  Deploy Jellyfin.
--  Deploy Uptime Kuma.
--  Configure backups.
+Deployed CasaOS to simplify application and container management through a web interface.
 
-### Phase 5 — Cybersecurity Monitoring
--  Deploy Wazuh.
--  Install Windows monitoring agent.
--  Deploy Suricata.
--  Configure security alerts.
--  Perform authorized detection tests.
--  Document security investigations.
+### 4. Cockpit
 
-### Phase 6 — Final Testing
--  Test remote access.
--  Test shared storage.
--  Test DNS filtering.
--  Test media streaming.
--  Test security monitoring.
--  Document final architecture.
+Configured Cockpit for browser-based Linux server administration and monitoring.
 
-## Storage Plan
+### 5. Tailscale
 
-**128 GB SSD**
-- Ubuntu Server
-- Docker application data
-- Wazuh index and logs
+Implemented private remote access through a Tailscale network.
 
-**512 GB HDD**
-- Shared files
-- Media library
-- Backups
+**Verification:** Successfully accessed the server's CasaOS dashboard from a mobile device using mobile data with Wi-Fi disabled.
 
-Final disk allocation will be documented after installation.
+### 6. AdGuard Home
 
-## Learning Outcomes
+Deployed AdGuard Home using Docker Compose.
 
-This project is designed to develop practical skills in:
+Configured DNS filtering and tested domain blocking.
 
-- Linux administration
-- TCP/IP networking
-- DNS and network filtering
-- SSH and remote access
-- Docker and containerization
-- SIEM operations
-- Intrusion detection
-- Security event analysis
-- Infrastructure monitoring
-- Backup and storage management
+**Verification:** A DNS query for `doubleclick.net` returned `0.0.0.0`.
 
-## Documentation
+### 7. UFW Firewall
 
-Installation instructions, configurations, architecture diagrams, troubleshooting notes, and test results will be maintained in the `docs/` directory.
+Enabled UFW with a default-deny incoming policy and configured rules for required server services.
 
-## Disclaimer
+---
 
-This project is intended for educational purposes and authorized security testing only.
+## Backup & Reliability
 
-All penetration-testing activities will be performed in environments where permission has been granted.
+Created a manual backup script to archive:
 
-## Project Status
+- AdGuard Home configuration and data.
+- Docker Compose configuration.
+- Selected system configuration files.
 
-**Currently in development.**
+The backup script was manually executed and tested successfully.
 
-This repository will be updated as the server is built, tested, and documented.
+Automatic scheduling and off-device backup are future improvements.
+
+---
+
+## Security Considerations
+
+- Private remote access through Tailscale.
+- Host firewall enabled.
+- Incoming traffic restricted by firewall policy.
+- Service management through controlled administrative interfaces.
+- No credentials, private keys or sensitive configuration files committed to this repository.
+
+---
+
+## Roadmap
+
+- [x] Install Ubuntu Server.
+- [x] Configure SSH access.
+- [x] Install Docker.
+- [x] Deploy CasaOS.
+- [x] Install Cockpit.
+- [x] Configure Tailscale remote access.
+- [x] Deploy AdGuard Home.
+- [x] Configure UFW.
+- [x] Create and test manual backup script.
+- [ ] Complete personal data backup from secondary HDD.
+- [ ] Configure NAS storage with Samba.
+- [ ] Deploy Jellyfin.
+- [ ] Implement multi-user storage permissions.
+- [ ] Configure automated backups.
+- [ ] Improve SSH and firewall hardening.
+- [ ] Add monitoring and alerting.
+- [ ] Document deployment and verification procedures.
+
+---
+
+## Skills Demonstrated
+
+- Linux system administration
+- Networking and DNS
+- Firewall configuration
+- Docker and container management
+- Remote access infrastructure
+- Service deployment and troubleshooting
+- Backup scripting
+- Server security fundamentals
+
+---
+
+## Project Philosophy
+
+**Build it. Secure it. Test it. Document it.**
+
+This is an ongoing hands-on learning project focused on developing practical infrastructure and cybersecurity engineering skills.
+
+*Built and maintained as a personal cybersecurity homelab.*
